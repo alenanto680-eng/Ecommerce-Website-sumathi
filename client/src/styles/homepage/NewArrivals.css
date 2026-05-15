@@ -1,0 +1,144 @@
+.new-arrivals-section {
+  width: 100%;
+  padding: 4rem 0;
+}
+
+.new-arrivals-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.new-arrivals-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--accent-clay);
+  margin-bottom: 0.6rem;
+}
+
+.new-arrivals-title strong {
+  color: var(--charcoal);
+}
+
+.new-arrivals-sub {
+  font-size: 0.95rem;
+  color: var(--slate-gray);
+  font-weight: 400;
+  margin-top: 0.5rem;
+}
+
+.na-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  max-width: 1070px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.na-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  cursor: pointer;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  background: #fff;
+}
+
+.na-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.na-img-wrap {
+  position: relative;
+  background: #F5F2EE;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.na-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.na-age {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(255, 255, 255, 0.88);
+  color: #1a1a1a;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 9px;
+  border-radius: 5px;
+  backdrop-filter: blur(4px);
+  pointer-events: none;
+}
+
+.na-card-info {
+  padding: 0.9rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.na-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.na-category {
+  font-size: 0.7rem;
+  color: var(--slate-gray);
+  font-weight: 400;
+}
+
+.na-card-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--charcoal);
+}
+
+.na-card-price {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent-clay);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .na-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .na-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 0 10px;
+  }
+
+  .na-card-info {
+    padding: 10px 8px;
+  }
+
+  .na-card-name {
+    font-size: 0.8rem;
+  }
+}

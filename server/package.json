@@ -1,0 +1,31 @@
+{
+  "name": "sumathi-trends-server",
+  "version": "1.0.0",
+  "description": "Backend for Sumathi Trends",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1013.0",
+    "axios": "^1.14.0",
+    "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^8.3.2",
+    "firebase-admin": "^13.8.0",
+    "helmet": "^8.1.0",
+    "ioredis": "^5.10.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^8.3.4",
+    "multer": "^2.1.1",
+    "node-cron": "^4.2.1",
+    "razorpay": "^2.9.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

@@ -1,0 +1,58 @@
+/* =========================================================
+   PRODUCT GALLERY
+========================================================= */
+.pg-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Main image — fills the full 480px left column */
+.pg-main {
+  width: 100%;
+  aspect-ratio: 4 / 4.2;
+  border-radius: 20px;
+  border: 1.5px solid #E0D8D0;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ── Thumbnails ──
+   5 columns × 89px + 4 gaps × 8px = 445 + 32 = 477px
+   pg-wrapper is width:100% of the 480px col so this fills edge-to-edge */
+.pg-thumbs {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  /* 5 equal cols that fill 100% */
+  gap: 8px;
+}
+
+.pg-thumb {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1.5px solid #E0D8D0;
+  cursor: pointer;
+  background: #ffffff;
+  padding: 0;
+  transition: border-color 0.2s;
+}
+
+.pg-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pg-thumb.active {
+  border: 2px solid var(--accent-clay, #C17B5C);
+}
+
+.pg-thumb:hover:not(.active) {
+  border-color: #C17B5C99;
+}

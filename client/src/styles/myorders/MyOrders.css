@@ -1,0 +1,424 @@
+/* ===== PAGE WRAPPER ===== */
+.mo-page {
+  min-height: 100vh;
+  background: #ffffff;
+  padding: 20px 20px 40px;
+}
+
+.mo-content {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* ===== BREADCRUMB ===== */
+/* Sits left-aligned, directly above the "My Orders History" heading */
+.mo-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: fit-content;
+  margin-bottom: 12px;   /* tight gap to the heading below */
+  font-size: 13px;
+}
+
+.mo-breadcrumb-link {
+  color: #999;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.mo-breadcrumb-link:hover {
+  color: #333;
+}
+
+.mo-breadcrumb-sep {
+  color: #bbb;
+  font-size: 14px;
+  line-height: 1;
+  user-select: none;
+}
+
+.mo-breadcrumb-current {
+  color: #555;
+}
+
+/* ===== HEADER ===== */
+.mo-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.mo-header h1 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 6px 0;
+}
+
+.mo-header p {
+  color: #888;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* ===== SEARCH BAR ===== */
+.mo-search-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.mo-search-input-wrapper {
+  position: relative;
+  width: 320px;
+}
+
+.mo-search-icon-img {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.mo-search-input {
+  width: 100%;
+  padding: 11px 12px 11px 36px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  background: #fff;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.mo-search-input:focus {
+  border-color: #aaa;
+}
+
+.mo-search-btn {
+  background: #2d2d2d;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 20px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.mo-search-btn:hover {
+  background: #444;
+}
+
+.mo-search-btn-icon {
+  width: 15px;
+  height: 15px;
+  filter: invert(1);
+}
+
+/* ===== EMPTY STATE ===== */
+.mo-empty {
+  text-align: center;
+  padding: 80px 20px;
+  background: #fcfcfc;
+  border-radius: 16px;
+  border: 1px dashed #e0e0e0;
+}
+
+.mo-empty p {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+.mo-shop-btn {
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 14px 36px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.mo-shop-btn:hover {
+  background: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* ===== ORDER LIST ===== */
+.mo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ===== ORDER CARD ===== */
+.mo-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+  transition: box-shadow 0.2s;
+}
+
+.mo-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.mo-card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.mo-card-img {
+  width: 72px;
+  height: 72px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid #eee;
+}
+
+.mo-card-info {
+  flex: 1;
+}
+
+.mo-card-name {
+  font-weight: 700;
+  font-size: 15px;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.mo-card-meta {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 6px;
+}
+
+.mo-card-price {
+  font-weight: 700;
+  font-size: 15px;
+  color: #1a1a1a;
+}
+
+/* ===== STATUS SECTION ===== */
+.mo-card-status {
+  text-align: right;
+  min-width: 190px;
+  flex-shrink: 0;
+}
+
+.mo-status-badge {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.mo-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.mo-status-dot.delivered { background: #22c55e; }
+.mo-status-dot.exchange  { background: #f97316; }
+.mo-status-dot.cancelled { background: #ef4444; }
+
+.mo-status-text.delivered { color: #22c55e; }
+.mo-status-text.exchange  { color: #f97316; }
+.mo-status-text.cancelled { color: #ef4444; }
+
+.mo-status-sub {
+  font-size: 12px;
+  color: #999;
+  margin-top: 2px;
+  margin-bottom: 8px;
+}
+
+.mo-review-btn {
+  background: none;
+  border: none;
+  color: #2C3E50;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+  padding: 0;
+  transition: opacity 0.2s;
+}
+
+.mo-review-btn:hover {
+  opacity: 0.75;
+  text-decoration: underline;
+}
+
+/* ===== PAGINATION ===== */
+.mo-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 32px;
+}
+
+.mo-page-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #fff;
+  color: #555;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+}
+
+.mo-page-btn:hover {
+  background: #f0f0f0;
+}
+
+.mo-page-btn.active {
+  background: #2d2d2d;
+  color: #fff;
+  border-color: #2d2d2d;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .mo-search-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .mo-search-input-wrapper {
+    width: 100%;
+  }
+
+  .mo-search-btn {
+    justify-content: center;
+  }
+
+  .mo-card-top {
+    flex-wrap: wrap;
+  }
+
+  .mo-card-status {
+    width: 100%;
+    text-align: left;
+    min-width: unset;
+    margin-left: 88px; /* Align with product text (72px img + 16px gap) */
+  }
+
+  .mo-status-badge {
+    justify-content: flex-start;
+  }
+
+  .mo-review-btn {
+    margin-left: 0;
+  }
+}
+
+/* ── Mobile only: hide sidebar from orders page, show back btn ── */
+.mobile-back-btn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* Hide breadcrumbs on mobile */
+  .mo-breadcrumb {
+    display: none !important;
+  }
+  
+  .mo-page {
+    padding: 0;
+  }
+
+  /* MyOrders doesn't have a sidebar currently, but being consistent */
+  .mo-page .sidebar {
+    display: none !important;
+  }
+
+  .mo-content {
+    width: 94%;
+    margin: 16px auto;
+    padding: 20px 16px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  }
+
+  .mo-mobile-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .mobile-back-btn {
+    display: flex !important; /* Force display on mobile */
+    align-items: center;
+    justify-content: center;
+    color: #2D3E50;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .mo-header {
+    margin-bottom: 0 !important;
+    text-align: left;
+  }
+
+  .mo-header h1 {
+    text-align: left;
+    font-size: 20px;
+  }
+
+  .mo-header p {
+    text-align: left;
+  }
+
+  .mobile-back-btn span.back-chevron {
+    font-size: 20px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

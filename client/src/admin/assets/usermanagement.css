@@ -1,0 +1,395 @@
+.um-page { background: transparent; }
+
+.um-title {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #1e2139;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.4px;
+}
+
+.um-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  margin-bottom: 2rem;
+}
+
+.um-card-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #2D3E50;
+  margin-bottom: 0.4rem;
+}
+
+.um-card-sub {
+  font-size: 0.84rem;
+  color: #6b7280;
+  margin-bottom: 1.4rem;
+}
+
+.um-msg {
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.um-msg-success { background: #f0fdf4; color: #16a34a; }
+.um-msg-error   { background: #fef2f2; color: #ef4444; }
+
+.um-form { display: flex; flex-direction: column; gap: 1rem; }
+
+.um-form-row {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.um-form-group { display: flex; flex-direction: column; gap: 0.4rem; flex: 1; }
+
+.um-form-group label {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #1e2139;
+}
+
+.um-form-group input {
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  font-size: 0.88rem;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  color: #1e2139;
+  transition: border-color 0.2s;
+}
+.um-form-group input:focus { border-color: #4f46e5; }
+
+.um-password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.um-password-wrapper input {
+  width: 100%;
+  padding-right: 3rem; 
+}
+
+.um-password-toggle {
+  position: absolute;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  transition: color 0.2s;
+}
+
+.um-password-toggle:hover {
+  color: #1e2139;
+}
+
+.um-create-btn {
+  align-self: flex-start;
+  background: #16a34a;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.6rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.2s;
+  margin-top: 0.5rem;
+}
+.um-create-btn:hover { background: #15803d; }
+
+.um-section-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #1e2139;
+  margin-bottom: 1rem;
+}
+
+.um-table-outer {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  overflow: hidden;
+}
+
+.um-empty {
+  padding: 2rem;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+.um-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+
+.um-table thead tr { border-bottom: 1.5px solid #e5e7eb; }
+
+.um-table th {
+  padding: 1.2rem 1.5rem;
+  text-align: left;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #9ca3af;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+}
+
+.um-table td {
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1.5px solid #f0f0f0;
+  color: #374151;
+  vertical-align: middle;
+}
+
+.um-table tbody tr:last-child td { border-bottom: none; }
+.um-table tbody tr:hover { background: #fafafa; }
+
+.um-username { font-weight: 700; color: #1e2139; font-size: 0.9rem; }
+
+.um-role-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  text-transform: uppercase;
+}
+.um-role-badge.superadmin { background: #E0E7FF; color: #3730A3; }
+.um-role-badge.admin      { background: #F3F4F6; color: #374151; }
+
+.um-last-login {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.um-login-date { font-weight: 600; color: #374151; }
+.um-login-time { font-size: 0.75rem; color: #9ca3af; }
+.um-login-never { font-style: italic; color: #d1d5db; }
+
+.um-actions { 
+    display: flex; 
+    gap: 0.8rem; 
+    align-items: center; 
+    justify-content: flex-start;
+}
+
+.um-access-btn {
+    background: #4f46e5;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 14px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+.um-access-btn:hover { background: #4338ca; transform: translateY(-1px); }
+
+.um-img-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: all 0.2s;
+  box-shadow: none;
+}
+
+.um-img-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+  transform: scale(1.1);
+}
+
+.um-img-btn img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* ── MODAL / FLOATING BOX ── */
+.um-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.um-modal-box {
+    background: #fff;
+    width: 90%;
+    max-width: 450px;
+    border-radius: 16px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    padding: 1.75rem;
+    position: relative;
+    animation: um-modal-fade 0.2s ease-out;
+}
+
+@keyframes um-modal-fade {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.um-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.um-modal-title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #1e2139;
+    margin: 0;
+}
+
+.um-modal-subtitle {
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-top: 4px;
+}
+
+.um-modal-close {
+    background: #f3f4f6;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #6b7280;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.um-modal-close:hover { background: #e5e7eb; color: #1e2139; }
+
+.um-modal-body {
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.um-modal-perms-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.um-modal-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border: 1.5px solid #f3f4f6;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.um-modal-checkbox:hover { border-color: #4f46e5; background: #f5f3ff; }
+.um-modal-checkbox input { width: 18px; height: 18px; accent-color: #4f46e5; }
+.um-modal-checkbox span { font-size: 0.88rem; font-weight: 500; color: #374151; }
+
+.um-modal-summary {
+    background: #f9fafb;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.um-summary-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #9ca3af;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.um-accessed-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.um-tag-empty { font-size: 0.85rem; color: #d1d5db; font-style: italic; }
+
+.um-accessed-tag {
+    background: #4f46e5;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 4px;
+    letter-spacing: 0.3px;
+}
+
+.um-modal-footer {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.um-btn-save-modal {
+    background: #4f46e5;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.7rem 1.4rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.um-btn-save-modal:hover { background: #4338ca; }
+
+.um-btn-cancel-modal {
+    background: #f3f4f6;
+    color: #4b5563;
+    border: none;
+    border-radius: 8px;
+    padding: 0.7rem 1.4rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.um-btn-cancel-modal:hover { background: #e5e7eb; }
+
+/* ── Mobile Responsive ── */
+@media (max-width: 600px) {
+  .um-page { padding: 0.5rem; }
+  .um-form-row { flex-direction: column; gap: 1rem; }
+  .um-table-outer { overflow-x: auto; }
+  .um-modal-box { width: 95%; padding: 1.25rem; }
+}

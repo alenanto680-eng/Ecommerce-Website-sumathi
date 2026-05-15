@@ -1,0 +1,18 @@
+# Root level (Docker/Compose stuff)
+.env
+*.log
+
+# Dependencies
+node_modules/
+
+# OS/IDE
+.DS_Store
+.vscode/
+
+# Project subfolders (handy to have here too)
+client/node_modules/
+client/dist/
+server/node_modules/
+
+# Docker build errors
+*.tmp

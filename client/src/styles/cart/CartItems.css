@@ -1,0 +1,203 @@
+.ci-wrapper { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 1rem;
+}
+
+.ci-row { 
+  display: flex; 
+  gap: 1.25rem; 
+  padding: 1rem 1.25rem; 
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+}
+
+/* ── Keeping the border ONLY for the product image ── */
+.ci-img { 
+  width: 80px; 
+  height: 90px; 
+  object-fit: cover; 
+  object-position: top center; 
+  border-radius: 10px; 
+  background: transparent;
+  border: 1px solid #E5E5E1; /* This remains for the individual product */
+  flex-shrink: 0; 
+}
+
+.ci-details { 
+  flex: 1; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 0.4rem; 
+}
+
+.ci-top { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: flex-start; 
+}
+
+.ci-name { 
+  font-size: 0.88rem; 
+  font-weight: 700; 
+  color: #2C2C2C; 
+  margin: 0; 
+}
+
+.ci-meta { 
+  font-size: 0.75rem; 
+  color: #999; 
+  margin: 0.15rem 0 0;
+}
+
+.ci-remove { 
+  background: none; 
+  border: none; 
+  cursor: pointer; 
+  color: #bbb; 
+  padding: 2px; 
+  transition: color 0.2s; 
+  flex-shrink: 0; 
+}
+
+.ci-remove:hover { 
+  color: #e55; 
+}
+
+.ci-bottom { 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  margin-top: auto; 
+  padding-top: 0.5rem; 
+}
+
+.ci-qty { 
+  display: flex; 
+  align-items: center; 
+  border: 1px solid #e0e0e0; 
+  border-radius: 8px; 
+  overflow: hidden; 
+}
+
+.ci-qty button { 
+  background: none; 
+  border: none; 
+  width: 30px; 
+  height: 30px; 
+  font-size: 1.1rem; 
+  cursor: pointer; 
+  color: #555; 
+  transition: background 0.15s; 
+}
+
+.ci-qty button:hover { 
+  background: #f5f5f5; 
+}
+
+.ci-qty span { 
+  width: 30px; 
+  text-align: center; 
+  font-size: 0.85rem; 
+  font-weight: 600; 
+  border-left: 1px solid #e0e0e0; 
+  border-right: 1px solid #e0e0e0; 
+  line-height: 30px; 
+}
+
+.ci-price { 
+  font-size: 0.95rem; 
+  font-weight: 700; 
+  color: #2C2C2C; 
+}
+
+/* Gift wrapping */
+.ci-gift { 
+  background: #fff;
+  border: 1px solid #eee; 
+  border-radius: 12px; 
+  padding: 1.25rem; 
+}
+
+.ci-gift-header { 
+  display: flex; 
+  align-items: flex-start; 
+  gap: 0.75rem; 
+  cursor: pointer; 
+}
+
+/* Circle toggle */
+.ci-gift-toggle {
+  width: 22px; height: 22px; min-width: 22px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: border-color 0.2s, background 0.2s;
+  margin-top: 2px;
+}
+
+.ci-gift-toggle.selected {
+  background: var(--accent-clay, #C17B5C);
+  border-color: var(--accent-clay, #C17B5C);
+}
+
+.ci-gift-title-wrap { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 0.2rem; 
+}
+
+.ci-gift-title-row { 
+  display: flex; 
+  align-items: center; 
+  gap: 0.4rem; 
+}
+
+.ci-gift-title { 
+  font-size: 0.88rem; 
+  font-weight: 700; 
+  color: #2C2C2C; 
+}
+
+.ci-gift-cost { 
+  font-size: 0.78rem; 
+  color: #999; 
+}
+
+.ci-gift-desc { 
+  font-size: 0.74rem; 
+  color: #aaa; 
+  margin: 0; 
+}
+
+.ci-gift-message { 
+  margin-top: 0.85rem; 
+}
+
+.ci-gift-label { 
+  font-size: 0.68rem; 
+  font-weight: 700; 
+  letter-spacing: 0.8px; 
+  color: #aaa; 
+  margin-bottom: 0.4rem; 
+}
+
+.ci-gift-input { 
+  width: 100%; 
+  border: 1px solid #e8e8e8; 
+  border-radius: 8px; 
+  padding: 0.65rem 0.75rem; 
+  font-size: 0.82rem; 
+  color: #555; 
+  resize: none; 
+  outline: none; 
+  font-family: inherit; 
+  box-sizing: border-box; 
+}
+
+.ci-gift-input:focus { 
+  border-color: var(--accent-clay, #C17B5C); 
+}

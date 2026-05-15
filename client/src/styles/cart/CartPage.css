@@ -1,0 +1,172 @@
+.cp-page { 
+    min-height: 100vh; 
+    background: #ffffff; 
+    padding: 2rem 0 4rem; 
+}
+.cp-inner { 
+    max-width: 1100px; 
+    margin: 0 auto; 
+    padding: 0 2rem; 
+}
+.cp-breadcrumb { 
+    font-size: 0.75rem; 
+    color: #999; 
+    margin-bottom: 0.75rem; 
+}
+.cp-breadcrumb a { 
+    color: #999; 
+    text-decoration: none; 
+}
+.cp-breadcrumb a:hover { 
+    color: var(--accent-clay, #C17B5C); 
+}
+.cp-title { 
+    font-size: 1.6rem; 
+    font-weight: 800; 
+    color: #2C2C2C; 
+    margin-bottom: 1.25rem; 
+    display: flex; 
+    align-items: center; 
+    gap: 0.75rem; 
+}
+.cp-count { 
+    font-size: 0.9rem; 
+    font-weight: 400; 
+    color: #999; 
+}
+.cp-free-bar { 
+    display: flex; 
+    align-items: center; 
+    gap: 0.75rem; 
+    background: #fff; 
+    border: 1px solid #eee; 
+    border-radius: 10px; 
+    padding: 0.65rem 1rem; 
+    margin-bottom: 1.75rem; 
+    font-size: 0.78rem; 
+    color: #555; 
+}
+.cp-free-bar-icon { 
+    display: flex; 
+    align-items: center; 
+    gap: 0.4rem; 
+    white-space: nowrap; 
+    font-weight: 600; 
+    color: #2C2C2C; 
+}
+.cp-free-bar-track { 
+    flex: 1; 
+    height: 6px; 
+    background: #eee; 
+    border-radius: 99px; 
+    overflow: hidden; 
+}
+.cp-free-bar-fill { 
+    height: 100%; 
+    background: var(--accent-clay, #C17B5C); 
+    border-radius: 99px; 
+    transition: width 0.4s ease; 
+}
+.cp-free-bar-label { 
+    white-space: nowrap; 
+    color: var(--accent-clay, #C17B5C); 
+    font-weight: 600; 
+}
+.cp-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 320px; 
+    gap: 2.5rem; 
+    align-items: start; 
+}
+
+.cp-left-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* ── Delivery Address Bar ── */
+.cp-addr-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 0.85rem 1.25rem;
+    margin-bottom: 0;
+}
+
+.cp-addr-bar-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cp-addr-pin {
+    color: var(--accent-clay, #C17B5C);
+    flex-shrink: 0;
+}
+
+.cp-addr-bar-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.cp-addr-bar-content p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+.cp-addr-line-1 {
+    color: #333;
+}
+
+.cp-addr-line-1 strong {
+    font-weight: 700;
+    color: #111;
+}
+
+.cp-addr-line-2 {
+    font-size: 0.82rem !important;
+    color: #999 !important;
+}
+
+.cp-addr-none {
+    color: #999;
+    font-style: italic;
+}
+
+.cp-addr-change-btn-link {
+    background: none;
+    border: none;
+    color: var(--accent-clay, #C17B5C);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: opacity 0.2s;
+}
+
+.cp-addr-change-btn-link:hover {
+    opacity: 0.7;
+}
+
+@media (max-width: 960px) { 
+    .cp-grid { grid-template-columns: 1fr; } 
+    .cp-addr-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .cp-addr-change-btn-link {
+        padding: 0;
+        align-self: flex-end;
+    }
+}
+
+

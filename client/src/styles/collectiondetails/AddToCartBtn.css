@@ -1,0 +1,123 @@
+/* ── Animated Add To Cart Button ── */
+.atc-btn {
+  --bg-scale:       1;
+  --text-o:         1;
+  --text-x:         12px;
+  --cart-x:         -48px;
+  --cart-y:         0px;
+  --cart-rotate:    0deg;
+  --cart-scale:     .75;
+  --cart-clip:      0px;
+  --shirt-y:        -16px;
+  --shirt-scale:    0;
+  --cart-transition: transform 0.2s ease;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  width: 100%;
+  padding: 0.9rem 1.5rem;
+  min-height: 50px;
+  border: none;
+  border-radius: 50px;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+/* Background pill */
+.atc-bg {
+  position: absolute;
+  inset: 0;
+  border-radius: 50px;
+  background: var(--accent-clay, #C17B5C);
+  transform: scaleX(var(--bg-scale));
+  transition: transform 0.25s cubic-bezier(.34,1.56,.64,1), background 0.25s;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.atc-btn.atc-added .atc-bg { background: var(--accent-clay, #C17B5C); }
+.atc-btn:hover:not(.atc-disabled) .atc-bg { filter: brightness(0.92); }
+
+.atc-btn.atc-disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.atc-btn.atc-disabled .atc-bg {
+  background: #d1d1d1;
+}
+
+.atc-btn.atc-disabled .atc-shirt,
+.atc-btn.atc-disabled .atc-cart {
+  display: none;
+}
+
+.atc-btn.atc-disabled .atc-label {
+  transform: none;
+  opacity: 0.7;
+  color: #666;
+}
+
+/* Shirt — positioned relative to cart center */
+.atc-shirt {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  margin-top: -24px;   /* start above the cart */
+  z-index: 4;
+  pointer-events: none;
+  transform-origin: 50% 50%;
+  transform: translateY(var(--shirt-y)) scale(var(--shirt-scale));
+  transition: transform 0.25s ease-in;
+}
+
+/* Cart — uses dynamic transition via JS */
+.atc-cart {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 36px;
+  height: 26px;
+  margin-left: -18px;
+  margin-top: -13px;
+  z-index: 3;
+  pointer-events: none;
+  pointer-events: none;
+  transform: translateX(var(--cart-x)) translateY(var(--cart-y)) rotate(var(--cart-rotate)) scale(var(--cart-scale));
+  transition: var(--cart-transition);
+  opacity: var(--cart-o, 1);
+}
+
+.atc-btn.atc-added .atc-cart {
+  opacity: 0;
+}
+
+/* Label */
+.atc-label {
+  position: relative;
+  z-index: 2;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+  opacity: var(--text-o);
+  transform: translateX(var(--text-x-final, var(--text-x)));
+  transition: opacity 0.25s, transform 0.25s;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.atc-btn.atc-added .atc-label {
+  --text-x-final: 0px;
+}

@@ -1,0 +1,51 @@
+.ec-page { 
+    min-height: 100vh; 
+    background: #ffffff; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+.ec-inner { 
+    text-align: center; 
+    max-width: 360px; 
+    padding: 2rem; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+}
+.ec-img { 
+    width: 200px; 
+    height: 200px; 
+    object-fit: contain; 
+    object-position: center center; 
+    display: block; 
+    margin-bottom: 1.5rem; 
+    margin-left: -35px; 
+}
+.ec-title { 
+    font-size: 1.25rem; 
+    font-weight: 800; 
+    color: #2C2C2C; 
+    margin-bottom: 0.6rem; 
+}
+.ec-sub { 
+    font-size: 0.83rem; 
+    color: #888; 
+    line-height: 1.6; 
+    margin-bottom: 1.75rem; 
+}
+.ec-btn { 
+    display: inline-flex; 
+    align-items: center; 
+    gap: 0.5rem; 
+    background: #1E2A38; 
+    color: #fff; 
+    text-decoration: none; 
+    padding: 0.75rem 1.75rem; 
+    border-radius: 8px; 
+    font-size: 0.82rem; 
+    font-weight: 700; 
+    letter-spacing: 0.5px; 
+    transition: background 0.2s; 
+}
+.ec-btn:hover { background: var(--accent-clay, #C17B5C); }

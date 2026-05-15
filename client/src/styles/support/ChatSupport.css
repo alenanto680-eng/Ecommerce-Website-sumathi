@@ -1,0 +1,641 @@
+/* =========================================================
+   CHAT SUPPORT PAGE
+========================================================= */
+
+
+/* ── CHAT WINDOW ── */
+.cs-container {
+  align-items: stretch !important;
+  height: calc(100vh - 120px);
+  min-height: 550px;
+  margin-top: 20px;
+}
+
+.cs-container .sidebar {
+  height: 100%;
+}
+
+.cs-chat-wrap {
+  margin: 0;
+  border-radius: 12px;
+  border: none;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12); /* Matches Sidebar shadow */
+  flex: 1;
+}
+
+/* Chat header bar */
+.cs-chat-header {
+  background: #0f1c2e;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cs-header-avatar {
+  width: 40px;
+  height: 40px;
+  background: #2D3E50;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+  border: 2px solid #1a4a8a;
+}
+
+.cs-header-info { flex: 1; }
+
+.cs-header-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 2px;
+}
+
+.cs-header-status {
+  font-size: 11px;
+  color: rgba(255,255,255,0.55);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.cs-online-dot {
+  width: 7px;
+  height: 7px;
+  background: #22c55e;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.cs-header-close {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.5);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: all 0.15s;
+}
+.cs-header-close:hover { background: rgba(255,255,255,0.1); color: #fff; }
+
+/* Messages area */
+.cs-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #f9fafb;
+}
+
+.cs-msg {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.cs-msg--user {
+  flex-direction: row-reverse;
+}
+
+.cs-avatar {
+  width: 32px;
+  height: 32px;
+  background: #0f1c2e;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.cs-bubble {
+  max-width: 72%;
+  padding: 10px 14px;
+  border-radius: 16px;
+  font-size: 13px;
+  line-height: 1.55;
+  position: relative;
+}
+
+.cs-bubble p { margin: 0 0 2px; }
+
+.cs-bubble--bot {
+  background: #fff;
+  border: 1px solid #ececec;
+  border-bottom-left-radius: 4px;
+  color: #212121;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.cs-bubble--user {
+  background: #2D3E50;
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+
+.cs-sender {
+  font-size: 9px;
+  font-weight: 700;
+  color: #aaa;
+  letter-spacing: 0.6px;
+  margin-bottom: 4px;
+}
+
+.cs-time {
+  font-size: 10px;
+  color: rgba(0,0,0,0.3);
+  margin-top: 4px;
+  text-align: right;
+}
+.cs-bubble--user .cs-time { color: rgba(255,255,255,0.55); }
+
+/* Typing indicator */
+.cs-bubble--typing {
+  background: #fff;
+  border: 1px solid #ececec;
+  border-bottom-left-radius: 4px;
+  padding: 14px 18px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.cs-bubble--typing span {
+  width: 7px;
+  height: 7px;
+  background: #bbb;
+  border-radius: 50%;
+  animation: cs-bounce 1.2s infinite;
+}
+.cs-bubble--typing span:nth-child(2) { animation-delay: 0.2s; }
+.cs-bubble--typing span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes cs-bounce {
+  0%, 60%, 100% { transform: translateY(0); }
+  30%            { transform: translateY(-6px); }
+}
+
+/* Media preview in message */
+.cs-media-preview {
+  max-width: 180px;
+  border-radius: 8px;
+  margin-top: 6px;
+  display: block;
+}
+
+/* Expired Blob Placeholder */
+.cs-media-placeholder {
+  margin-top: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 200px;
+}
+
+.cs-bubble--bot .cs-media-placeholder {
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+}
+
+.cs-placeholder-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.cs-placeholder-name {
+  font-size: 11px;
+  font-weight: 600;
+  color: inherit;
+  opacity: 0.9;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Input area */
+.cs-input-area {
+  border-top: 1px solid #f0f0f0;
+  padding: 10px 16px 8px;
+  background: #fff;
+}
+
+.cs-skip-btn {
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #2D3E50;
+  cursor: pointer;
+  margin-bottom: 8px;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.15s;
+}
+.cs-skip-btn:hover { background: #f0f5ff; border-color: #2D3E50; }
+
+.cs-media-thumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px 0 4px;
+}
+
+.cs-media-thumb-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.cs-media-thumb {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  display: block;
+}
+
+.cs-media-thumb--video {
+  width: 80px;
+  height: 56px;
+  background: #1a1a2e;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #fff;
+  gap: 2px;
+}
+.cs-media-thumb--video span {
+  font-size: 9px;
+  color: #aaa;
+  max-width: 72px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cs-remove-media {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #ff3f3f;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 9px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.cs-input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cs-attach-btn {
+  background: none;
+  border: none;
+  color: #bbb;
+  cursor: not-allowed;
+  padding: 6px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  transition: all 0.15s;
+  position: relative;
+}
+
+.cs-attach-btn--active {
+  color: #2D3E50;
+  background: #e8f0ff;
+  cursor: pointer;
+}
+.cs-attach-btn--active:hover {
+  background: #d4e5ff;
+}
+
+.cs-input {
+  flex: 1;
+  border: 1px solid #e8e8e8;
+  border-radius: 24px;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  resize: none;
+  line-height: 1.4;
+  min-height: 40px;
+  max-height: 120px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  transition: border-color 0.2s;
+  background: #f9fafb;
+}
+.cs-input::-webkit-scrollbar {
+  display: none;
+}
+.cs-input:focus { border-color: #2D3E50; background: #fff; }
+.cs-input:disabled { background: #f5f5f5; color: #aaa; }
+
+.cs-send-btn {
+  width: 38px;
+  height: 38px;
+  background: #2D3E50;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s, transform 0.1s;
+}
+.cs-send-btn:hover:not(:disabled) { background: #1a5fc0; transform: scale(1.05); }
+.cs-send-btn:disabled { background: #ccc; cursor: not-allowed; }
+
+.cs-secure-note {
+  font-size: 10px;
+  color: #bbb;
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* Breadcrumb */
+.cs-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  padding: 16px 24px 0;
+  color: #888;
+}
+.cs-bc-link    { color: #888; cursor: pointer; transition: color 0.15s; }
+.cs-bc-link:hover { color: #212121; }
+.cs-bc-sep     { color: #ccc; }
+.cs-bc-current { color: #212121; font-weight: 600; }
+
+.cs-main-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+}
+
+/* Media grid in messages */
+.cs-media-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.cs-media-preview {
+  max-width: 150px;
+  max-height: 120px;
+  border-radius: 8px;
+  display: block;
+  object-fit: cover;
+}
+
+.cs-ended-inline {
+  text-align: center;
+  font-size: 12px;
+  color: #aaa;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 8px 0 4px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  /* Hide the sidebar on support section pages */
+  .sh-page .sidebar {
+    display: none !important;
+  }
+
+  .sh-page {
+    padding: 0;
+    min-height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .sh-container {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .cs-container {
+    min-height: auto;
+    height: auto;
+  }
+
+  .sh-main {
+    width: 94%;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    padding: 20px 0 0;
+  }
+
+  .cs-main-wrapper {
+    height: calc(100vh - 140px);
+    position: relative;
+    top: 0;
+  }
+
+  .cs-chat-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+
+  /* Back button in Chat Header */
+  .cs-chat-header .mobile-back-btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    color: #fff; /* White on dark blue */
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  /* Global mobile back button (for other contexts if any) */
+  .mobile-back-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2D3E50;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .mobile-back-btn span.back-chevron {
+    font-size: 20px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cs-breadcrumb {
+    display: none !important;
+  }
+
+  .cs-chat-wrap {
+    margin: 0 12px 12px;
+  }
+}
+
+/* Restart Chat Styles */
+.cs-restart-wrap {
+  text-align: center;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.cs-restart-btn {
+  background: #1E2A38;
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.cs-restart-btn:hover {
+  background: #2D3E50;
+  transform: translateY(-1px);
+}
+
+.cs-restart-btn:active {
+  transform: translateY(0);
+}
+
+.cs-restart-note {
+  font-size: 11px;
+  color: #999;
+  margin: 0;
+}
+
+/* Product Selection in Chat */
+.cs-product-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
+  width: 100%;
+}
+
+.cs-product-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cs-product-option:hover {
+  border-color: #2D3E50;
+  background: #f1f5f9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.cs-p-opt-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  background: #fff;
+}
+
+.cs-p-opt-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.cs-p-opt-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.3;
+}
+
+.cs-p-opt-size {
+  font-size: 11px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.cs-p-opt-select {
+  margin-top: 4px;
+  background: #2D3E50;
+  color: #fff;
+  border: none;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 6px;
+  width: fit-content;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}

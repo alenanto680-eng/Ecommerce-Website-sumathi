@@ -1,0 +1,90 @@
+/* SupportManagement.css */
+.support-management-container {
+  padding: 20px;
+}
+
+.support-table-container {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.support-status-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-pending { background: #fff3cd; color: #856404; }
+.status-in-progress { background: #cce5ff; color: #004085; }
+.status-resolved { background: #d4edda; color: #155724; }
+
+.attachment-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.attachment-preview-item {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  background: #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.attachment-preview-item img, 
+.attachment-preview-item video {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.issue-description-well {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ── MOBILE RESPONSIVENESS ── */
+@media (max-width: 768px) {
+  .support-management-container {
+    padding: 10px;
+  }
+
+  .support-table-container {
+    overflow-x: auto;
+  }
+
+  .support-table-container table {
+    min-width: 800px;
+  }
+
+  .support-table-container th,
+  .support-table-container td {
+    white-space: nowrap !important;
+  }
+
+  .support-management-container h2 {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .attachment-preview-grid {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 10px;
+  }
+}

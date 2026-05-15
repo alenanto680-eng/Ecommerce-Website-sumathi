@@ -1,0 +1,285 @@
+/* =========================================================
+   PRODUCT REVIEWS
+========================================================= */
+.pr-wrapper {
+  padding: 2rem 0 1.5rem;
+  border-top: 1px solid #E8E4DE;
+  margin-top: 1.5rem;
+}
+
+.pr-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--charcoal, #2C2C2C);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.pr-summary {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1.25rem 2rem;
+  background: #FAF8F5;
+  border-radius: 12px;
+}
+
+.pr-score-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
+.pr-score {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--charcoal, #2C2C2C);
+  line-height: 1;
+}
+
+.pr-stars {
+  color: #E8A020;
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+
+.pr-total {
+  font-size: 0.75rem;
+  color: #999;
+}
+
+.pr-bars {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.pr-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pr-bar-label {
+  font-size: 0.75rem;
+  color: #888;
+  width: 12px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.pr-bar-track {
+  flex: 1;
+  height: 6px;
+  background: #E8E4DE;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.pr-bar-fill {
+  height: 100%;
+  background: var(--accent-clay, #C17B5C);
+  border-radius: 50px;
+  transition: width 0.6s ease;
+}
+
+.pr-bar-count {
+  font-size: 0.72rem;
+  color: #999;
+  width: 20px;
+  flex-shrink: 0;
+}
+
+/* Review cards */
+.pr-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.pr-card {
+  background: white;
+  border: 1px solid #EDE8E0;
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+}
+
+.pr-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.pr-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #F0EBE3;
+  flex-shrink: 0;
+}
+
+.pr-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--charcoal, #2C2C2C);
+  margin-bottom: 0.1rem;
+}
+
+.pr-date {
+  font-size: 0.72rem;
+  color: #aaa;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.pr-text {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+.pr-avatar-placeholder {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #C17B5C;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.pr-loading,
+.pr-empty {
+  text-align: center;
+  padding: 3rem;
+  color: #999;
+  font-style: italic;
+}
+
+/* Media display in review cards */
+.pr-media {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.pr-media-item {
+  width: 90px;
+  height: 90px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #EEE9E2;
+  background: #F8F6F2;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  position: relative;
+}
+
+.pr-media-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.pr-media-item img,
+.pr-media-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pr-view-more-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.pr-view-more-btn {
+  background: none;
+  border: none;
+  color: var(--accent-clay, #C17B5C);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pr-view-more-btn:hover {
+  border-bottom-color: var(--accent-clay, #C17B5C);
+  opacity: 0.8;
+}
+
+/* Lightbox Styling */
+.pr-lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.pr-lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pr-lightbox-media {
+  max-width: 100%;
+  max-height: 90vh;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.pr-lightbox-close {
+  position: absolute;
+  top: -40px;
+  right: -20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.pr-video-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.8);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  font-size: 12px;
+  z-index: 2;
+  pointer-events: none;
+}

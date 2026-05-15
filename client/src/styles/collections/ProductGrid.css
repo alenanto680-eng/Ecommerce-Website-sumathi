@@ -1,0 +1,240 @@
+.pg-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.pg-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem 0;
+  color: var(--slate-gray);
+  font-size: 0.95rem;
+}
+
+/* ── Card ── */
+.pg-card {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #F5F5F2;
+}
+
+/* ── Image — SQUARE ── */
+.pg-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #F5F5F2;
+  overflow: hidden;
+}
+
+.pg-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Single badge — admin-controlled only ── */
+.pg-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  color: white;
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: var(--charcoal);
+}
+
+.pg-badge-new  { background: #2D3E50; }
+.pg-badge-best { background: #92400e; color: #fef3c7; }
+.pg-badge-sale { background: var(--accent-clay, #c07a55); }
+
+/* ── Age badge — bottom-left of image ── */
+.pg-age-badge {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(255, 255, 255, 0.88);
+  color: #1a1a1a;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 9px;
+  border-radius: 5px;
+  backdrop-filter: blur(4px);
+  pointer-events: none;
+  line-height: 1;
+}
+
+.pg-wishlist {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* ── Info ── */
+.pg-info {
+  padding: 0.8rem 0.9rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.pg-category {
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: var(--slate-gray);
+  display: block;
+}
+
+.pg-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--charcoal);
+}
+
+.pg-stars {
+  font-size: 0.72rem;
+  display: flex;
+  align-items: center;
+}
+
+.pg-stars-filled { color: #F59E0B; }
+.pg-stars-empty { color: #d1d5db; }
+
+.pg-reviews {
+  font-size: 0.68rem;
+  color: var(--slate-gray);
+  margin-left: 4px;
+}
+
+.pg-price-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pg-price {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent-clay);
+}
+
+.pg-old-price {
+  font-size: 0.78rem;
+  color: var(--slate-gray);
+  text-decoration: line-through;
+}
+
+.pg-wishlist--active {
+  color: #e11d48 !important;
+  opacity: 1 !important;
+}
+
+
+/* ── Pagination ── */
+.pg-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.pg-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 40px;
+  padding-top: 25px;
+  border-top: 1px solid #e2e8f0;
+  width: 100%;
+}
+
+.pg-pag-btn {
+  padding: 8px 18px;
+  border-radius: 8px;
+  border: none;
+  background: #1f2b48;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 100px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.pg-pag-btn:hover:not(:disabled) {
+  background: #101726;
+  transform: translateY(-1px);
+}
+
+.pg-pag-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.pg-pag-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background: #cbd5e1;
+  color: #64748b;
+}
+
+.pg-pag-info {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1f2b48;
+  padding: 0 5px;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .pg-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── Out of Stock Overlay ── */
+.pg-img-wrap.pg-out-of-stock img {
+  opacity: 0.6;
+  filter: grayscale(0.5);
+}
+
+.pg-out-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  padding: 1rem;
+}
+
+.pg-out-overlay span {
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-align: center;
+}

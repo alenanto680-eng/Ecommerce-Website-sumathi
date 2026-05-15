@@ -1,0 +1,291 @@
+.contact-page {
+  background: transparent;
+}
+
+/* Title */
+.contact-title {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #1e2139;
+  margin-bottom: 1.2rem;
+}
+
+/* Outer box */
+.contact-outer {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e7eb;
+}
+
+.contact-outer.empty {
+  text-align: center;
+}
+
+/* Table card */
+.contact-card {
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Table */
+.contact-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* FIXED ROW BORDER */
+.contact-table tr {
+  border-bottom: 1.5px solid #e5e7eb;
+}
+
+.contact-table th {
+  padding: 1.4rem;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #9ca3af;
+}
+
+.contact-table td {
+  padding: 1.4rem;
+  text-align: center;
+  color: #374151;
+  vertical-align: middle;
+}
+
+.contact-table tbody tr:hover {
+  background: #fafafa;
+}
+
+/* Badge */
+.type-badge {
+  background: #fef9c3;
+  color: #854d0e;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+/* Text styles */
+.td-name {
+  font-weight: 700;
+  color: #1e2139;
+}
+
+/* FIXED (no flex anymore) */
+.td-contact {
+  text-align: center;
+  line-height: 1.4;
+}
+
+.td-email {
+  font-size: 0.78rem;
+  color: #6b7280;
+}
+
+.td-msg {
+  color: #6b7280;
+  max-width: 500px;
+}
+
+/* Actions */
+.td-action {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+/* Buttons */
+.btn-view {
+  background: #2D3E50;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.btn-view:hover {
+  background: #2D3E50;
+}
+
+.btn-delete {
+  background: #ef4444;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  background: #dc2626;
+}
+
+/* ── Modal ── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-box {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 2rem 2.2rem 1.6rem;
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.18);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #6b7280;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal-close:hover {
+  color: #111827;
+}
+
+.modal-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #2D3E50;
+  margin: 0 0 0.8rem;
+}
+
+.modal-divider {
+  border: none;
+  border-top: 1.5px solid #e5e7eb;
+  margin-bottom: 1.2rem;
+}
+
+.modal-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-bottom: 1.4rem;
+}
+
+.modal-fields p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: #374151;
+}
+
+.modal-fields a {
+  color: #2D3E50;
+  text-decoration: none;
+}
+
+.modal-fields a:hover {
+  text-decoration: underline;
+}
+
+.modal-msg-section h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1e2139;
+  margin: 0 0 0.6rem;
+}
+
+.modal-msg-box {
+  background: #f3f4f6;
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+  font-size: 0.9rem;
+  color: #374151;
+  line-height: 1.6;
+  min-height: 60px;
+  white-space: pre-wrap;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.4rem;
+}
+
+.btn-close-modal {
+  background: #f3f4f6;
+  color: #374151;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 24px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-close-modal:hover {
+  background: #e5e7eb;
+}
+
+/* ── Mobile Responsive ── */
+@media (max-width: 768px) {
+  .contact-outer {
+    padding: 1rem;
+    margin: 0 -0.5rem; /* Slight negative margin to maximize space if needed */
+  }
+
+  .contact-card {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Smooth inertia scroll for iOS */
+  }
+
+  .contact-table {
+    min-width: 700px; /* Force table to maintain width so columns don't squash */
+  }
+
+  .contact-title {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .modal-box {
+    width: 90%;
+    margin: 1.2rem;
+    padding: 1.8rem 1.4rem;
+  }
+
+  .modal-fields p {
+    font-size: 0.85rem;
+  }
+
+  .td-name, .td-msg {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    max-width: 150px !important; /* Force a single concise line on mobile */
+  }
+
+  .td-contact {
+    white-space: nowrap;
+  }
+
+  .contact-table td, .contact-table th {
+    white-space: nowrap !important;
+  }
+}
+
+

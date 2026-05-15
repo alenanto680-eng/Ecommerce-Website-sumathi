@@ -1,0 +1,110 @@
+/* =========================================================
+   IMAGE LIGHTBOX
+========================================================= */
+.lb-overlay {
+  position: fixed;
+  inset: 0;
+  background: #ffffff;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: lb-fade-in 0.2s ease;
+}
+
+@keyframes lb-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Close button */
+.lb-close {
+  position: fixed;
+  top: 1.25rem;
+  left: 1.5rem;
+  background: rgba(0,0,0,0.08);
+  border: none;
+  color: #2C2C2C;
+  font-size: 1.2rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+  z-index: 100000;
+}
+
+.lb-close:hover {
+  background: rgba(0,0,0,0.15);
+}
+
+/* Image wrapper — fills the space between the two arrows */
+.lb-img-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: calc(100vw - 160px);
+  height: calc(100vh - 80px);
+}
+
+/* Image fills the wrapper */
+.lb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 4px;
+  user-select: none;
+  animation: lb-scale-in 0.2s ease;
+}
+
+@keyframes lb-scale-in {
+  from { transform: scale(0.95); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+.lb-counter {
+  font-size: 0.78rem;
+  color: rgba(0,0,0,0.4);
+  letter-spacing: 1px;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+/* Arrows */
+.lb-arrow {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.08);
+  border: none;
+  color: #2C2C2C;
+  font-size: 2.5rem;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+  z-index: 100000;
+  line-height: 1;
+  padding-bottom: 3px;
+}
+
+.lb-arrow:hover:not(:disabled) {
+  background: rgba(0,0,0,0.15);
+}
+
+.lb-arrow:disabled {
+  opacity: 0.2;
+  cursor: default;
+}
+
+.lb-prev { left: 1.5rem; }
+.lb-next { right: 1.5rem; }

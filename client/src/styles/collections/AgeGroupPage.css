@@ -1,0 +1,160 @@
+.agp-page {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.agp-page .section-inner {
+  padding-top: 0;
+}
+
+/* Breadcrumb — more gap from navbar */
+.page-breadcrumb {
+  display: flex;
+  align-items: center;
+  padding: 6rem 0 1rem;
+  font-size: 0.82rem;
+}
+
+.breadcrumb-link {
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumb-link:hover {
+  color: var(--accent-clay, #c07a55);
+}
+
+.breadcrumb-sep {
+  color: #9ca3af;
+  margin: 0 4px;
+}
+
+.breadcrumb-current {
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+/* Layout */
+.agp-layout {
+  display: flex;
+  gap: 3rem;
+  padding: 0.5rem 0 5rem;
+  align-items: flex-start;
+}
+
+.agp-right {
+  flex: 1;
+  min-width: 0;
+}
+
+.agp-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #E8E8E8;
+}
+
+.agp-count {
+  font-size: 0.82rem;
+  color: var(--slate-gray);
+}
+
+.agp-count strong {
+  color: var(--charcoal);
+}
+
+.agp-sort {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--slate-gray);
+}
+
+.agp-sort select {
+  border: none;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--accent-clay);
+  background: none;
+  cursor: pointer;
+  outline: none;
+  font-family: 'Inter', sans-serif;
+}
+
+.agp-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 3rem;
+}
+
+.agp-page-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid #E2E8F0;
+  background: white;
+  color: var(--charcoal);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  font-family: 'Inter', sans-serif;
+}
+
+.agp-page-btn:hover:not(:disabled) {
+  border-color: var(--accent-clay);
+  color: var(--accent-clay);
+}
+
+.agp-page-btn.active {
+  background: var(--accent-clay);
+  border-color: var(--accent-clay);
+  color: white;
+}
+
+.agp-page-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.agp-arrow {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .agp-layout {
+    flex-direction: column;
+    padding-top: 1rem;
+  }
+
+  .filter-sidebar {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .nav-spacer {
+    height: 16px;
+  }
+
+  .page-breadcrumb {
+    padding-top: 1rem;
+  }
+}
+
+/* Spacer to offset fixed navbar height */
+.nav-spacer {
+  height: 76px;
+  width: 100%;
+  flex-shrink: 0;
+}

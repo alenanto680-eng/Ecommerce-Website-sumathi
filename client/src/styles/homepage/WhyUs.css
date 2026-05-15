@@ -1,0 +1,192 @@
+
+/* =========================================================
+   WHY CHOOSING US
+========================================================= */
+
+.why-section {
+  width: 100%;
+  padding: 5rem 0 0;   /* removed bottom gap */
+  background: #fff;
+  position: relative;
+  overflow: visible;
+}
+
+
+/* ── Section Title ── */
+.why-title-label {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 4rem;
+  color: var(--charcoal);
+}
+
+.why-title-label span {
+  color: var(--accent-clay);
+}
+
+/* ── Grid Layout ── */
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  gap: 3rem;
+  padding: 0 8%;
+}
+
+/* ── Content ── */
+.why-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.why-headline {
+  font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+  font-weight: 900;
+  color: var(--charcoal);
+  line-height: 1.25;
+}
+
+.why-desc {
+  font-size: 0.95rem;
+  color: var(--slate-gray);
+  line-height: 1.75;
+  max-width: 480px;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Features Grid ── */
+.why-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.8rem 2rem;
+}
+
+.why-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+/* ── Icon ── */
+.why-item-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(192,127,94,0.1);
+  border: 1.5px solid rgba(192,127,94,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  color: var(--accent-clay);
+}
+
+.why-item:hover .why-item-icon {
+  background: var(--accent-clay);
+  border-color: var(--accent-clay);
+  transform: translateY(-3px);
+  color: #fff;
+}
+
+/* ── Text ── */
+.why-item-text h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 5px;
+}
+
+.why-item-text p {
+  font-size: 0.8rem;
+  color: var(--slate-gray);
+  line-height: 1.55;
+}
+
+/* ── Visual Side ── */
+.why-visuals {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 2rem;
+}
+
+.why-blob {
+  display: none;
+}
+
+.why-img {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 460px;
+  height: 100%;
+  object-fit: contain;
+  filter: none;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 1100px) {
+  .why-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 5%;
+  }
+
+  .why-content {
+    display: contents;
+  }
+
+  .why-headline {
+    order: 1;
+    text-align: center;
+  }
+
+  .why-desc {
+    order: 2;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  .why-visuals {
+    order: 3;
+    margin: 0 auto;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .why-items {
+    order: 4;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .na-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why-items {
+    grid-template-columns: 1fr !important;
+    gap: 2rem;
+    width: 100%;
+    justify-items: center;
+  }
+
+  .why-item {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 0.8rem;
+    width: 100%;
+  }
+
+}

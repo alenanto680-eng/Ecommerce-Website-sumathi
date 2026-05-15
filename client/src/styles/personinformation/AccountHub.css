@@ -1,0 +1,76 @@
+/* =============================================
+   ACCOUNT HUB PAGE
+   - Mobile: shows centered sidebar ONLY
+   - Desktop: shows sidebar + welcome panel
+   ============================================= */
+
+.hub-page {
+  padding: 8px 20px 20px;
+}
+
+.hub-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+/* Desktop welcome panel */
+.hub-welcome-panel {
+  flex: 1;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  padding: 40px;
+}
+
+.hub-welcome-inner {
+  text-align: center;
+  color: #64748b;
+}
+
+.hub-welcome-inner h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2C3E50;
+  margin-bottom: 12px;
+}
+
+.hub-welcome-inner p {
+  font-size: 1rem;
+  color: #878787;
+}
+
+/* =============================================
+   MOBILE ONLY (≤768px)
+   On mobile: hide the welcome panel entirely,
+   center the sidebar, full-width card look.
+   ============================================= */
+@media (max-width: 768px) {
+  .hub-page {
+    padding: 0;
+  }
+
+  .hub-container {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* Hide the desktop welcome panel on mobile */
+  .hub-welcome-panel {
+    display: none !important;
+  }
+
+  /* Sidebar takes the full centered width */
+  .hub-container .sidebar {
+    width: 92% !important;
+    min-width: 0 !important;
+    margin: 24px auto !important;
+    align-self: center;
+  }
+}

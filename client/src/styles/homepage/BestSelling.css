@@ -1,0 +1,153 @@
+/* =========================================================
+   BEST SELLING / ORBIT
+========================================================= */
+
+.arrivals-section {
+  width: 100%;
+  background: #ffffff;
+  padding: 2.5rem 0 3rem; /* reduced top gap */
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Header ── */
+.best-selling-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.best-selling-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--accent-clay);
+  margin-bottom: 0.6rem;
+}
+
+.best-selling-title span {
+  color: var(--charcoal);
+}
+
+.best-selling-sub {
+  font-size: 0.95rem;
+  color: var(--slate-gray);
+  font-weight: 400;
+}
+
+/* ── Orbit Scene ── */
+.orbit-scene {
+  width: 100%;
+  min-height: 420px; /* responsive height instead of fixed */
+  padding: 1rem 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+}
+
+.orbit-ring {
+  position: relative;
+  width: 420px;
+  height: 420px;
+  transform-style: preserve-3d;
+  animation: orbitSpin 55s linear infinite;
+}
+
+.orbit-ring:hover {
+  animation-play-state: paused;
+}
+
+/* ── Cards ── */
+.arr-card {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 8px 30px rgba(45, 62, 80, 0.2);
+  border: 3px solid rgba(192, 127, 94, 0.3);
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -100px;
+}
+
+.arr-card:hover {
+  border-color: var(--accent-clay);
+  box-shadow: 0 0 30px rgba(192, 127, 94, 0.5),
+              0 8px 30px rgba(45, 62, 80, 0.25);
+}
+
+.arr-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.arr-card:hover img {
+  transform: scale(1.06);
+}
+
+/* ── Hover Overlay ── */
+.arr-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 30%,
+    rgba(45, 62, 80, 0.75) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  padding: 1rem;
+}
+
+.arr-card:hover .arr-card-overlay {
+  opacity: 1;
+}
+
+.arr-hover-btn {
+  width: 42px;
+  height: 42px;
+  background: var(--accent-clay);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: auto;
+  box-shadow: 0 6px 16px rgba(192, 127, 94, 0.45);
+}
+
+.arr-hover-info {
+  background: white;
+  border-radius: 12px;
+  padding: 0.65rem 1rem;
+  text-align: center;
+  width: 100%;
+}
+
+.arr-hover-tag {
+  font-size: 0.58rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--accent-clay);
+  display: block;
+  margin-bottom: 3px;
+}
+
+.arr-hover-name {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--charcoal);
+}
+

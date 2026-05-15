@@ -1,0 +1,246 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.admin-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+  background: #1e293b;
+  /* Dark so no white gap ever shows through on mobile */
+}
+
+.admin-sidebar {
+  width: 240px !important;
+  min-width: 240px !important;
+  height: 100vh;
+  background: #2D3E50;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  overflow-y: auto;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.admin-brand {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 800;
+  padding: 2rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: left;
+  width: 100%;
+}
+
+.admin-nav {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  padding: 1rem 0;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.admin-nav-link {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.8rem 1.5rem;
+  transition: all 0.2s;
+  display: block;
+  text-align: left !important;
+  width: 100%;
+}
+
+.admin-nav-link:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+.admin-nav-link.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-left: 4px solid #2D3E50;
+}
+
+.admin-signout {
+  margin: auto 1.5rem 2rem;
+  background: #ef4444;
+  border: none;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.75rem;
+  width: calc(100% - 3rem);
+  transition: background 0.2s;
+}
+
+.admin-main {
+  margin-left: 240px;
+  /* Offset for sidebar */
+  flex: 1;
+  height: 100vh;
+  overflow-y: auto;
+  background: #f8fafc;
+  padding: 2.5rem;
+}
+
+.admin-main::-webkit-scrollbar {
+  width: 8px;
+}
+
+.admin-main::-webkit-scrollbar-track {
+  background: #f3f4f6;
+}
+
+.admin-main::-webkit-scrollbar-thumb {
+  background: #c1c9d4;
+  border-radius: 4px;
+}
+
+.admin-main::-webkit-scrollbar-thumb:hover {
+  background: #a0aab4;
+}
+
+.admin-signout-inline {
+  display: none;
+  /* Hide on desktop */
+}
+
+/* ── Mobile Top Bar ── */
+.admin-mobile-header {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background: #1e293b;
+  color: #ffffff;
+  z-index: 500;
+  align-items: center;
+  padding: 0 1.2rem;
+  box-shadow: none;
+  /* Remove shadow to merge with sidebar */
+  border: none;
+}
+
+.admin-hamburger {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  margin-right: 0.8rem;
+  outline: none;
+}
+
+.admin-mobile-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* ── Mobile Responsive Overlay ── */
+.admin-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: -100px;
+  /* Extend past viewport bottom to cover gesture bar */
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(4px);
+  z-index: 400;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .admin-mobile-header {
+    display: flex;
+  }
+
+  .admin-sidebar {
+    top: 70px;
+    height: calc(100dvh - 70px);
+    background: #1e293b;
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 450;
+    width: 280px;
+    box-shadow: 15px 0 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .admin-nav {
+    background: #1e293b;
+  }
+
+  .admin-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .admin-main {
+    margin-left: 0;
+    width: 100%;
+    padding: 1.5rem 1rem;
+    margin-top: 70px;
+    height: calc(100dvh - 70px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+
+  .admin-sidebar.open .admin-brand {
+    display: none;
+  }
+
+  .admin-nav-link {
+    padding: 1.2rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .admin-signout {
+    display: none;
+    /* Hide original signout on mobile */
+  }
+
+  .admin-signout-inline {
+    display: flex;
+    /* Show inline log out only on mobile */
+    width: calc(100% - 2.4rem);
+    margin: 1.5rem 1.2rem;
+    background: #243142;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.9rem;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.2s ease;
+  }
+
+  .admin-signout-inline:hover {
+    background: #dc2626;
+    border-color: #dc2626;
+  }
+}

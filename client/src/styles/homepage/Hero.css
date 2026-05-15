@@ -1,0 +1,254 @@
+/* =========================================================
+   HERO SECTION
+========================================================= */
+.hero-section {
+  width: 100%;
+  padding: 0 0 40px;
+  margin-top: -10px;
+  display: flex;
+  align-items: flex-start;
+
+}
+
+.hero-section .section-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  gap: 30px;
+  align-items: end;
+  width: 100%;
+}
+
+/* ── Typewriter Tag ── */
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #FDF0E8, #FAE0CC);
+  border: 1.5px solid rgba(192, 127, 94, 0.25);
+  border-radius: 50px;
+  padding: 6px 16px;
+  margin-bottom: 1.2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-clay);
+  letter-spacing: 0.04em;
+  width: fit-content;
+}
+
+.hero-tag .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-clay);
+  animation: pulse-dot 1.5s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse-dot {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.4;
+    transform: scale(0.7);
+  }
+}
+
+/* ── JS-driven Typewriter ── */
+.typewriter-js {
+  white-space: nowrap;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-clay);
+  letter-spacing: 0.04em;
+  min-width: 0;
+}
+
+.typewriter-js .cursor {
+  display: inline-block;
+  margin-left: 1px;
+  color: var(--accent-clay);
+  animation: blink-cursor 0.75s step-end infinite;
+  font-weight: 300;
+}
+
+@keyframes blink-cursor {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ── Title ── */
+.hero-title {
+  font-size: clamp(2.8rem, 5.5vw, 4.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1.2rem;
+  color: var(--charcoal);
+  letter-spacing: -0.03em;
+}
+
+.hero-title .line-1,
+.hero-title .line-2 {
+  display: block;
+}
+
+.hero-title .accent,
+.hero-title .accent-inline {
+  background: linear-gradient(135deg, var(--accent-clay) 0%, #E29578 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-title .accent {
+  display: block;
+  padding-bottom: 0.15em;
+  margin-bottom: -0.15em;
+}
+
+/* ── Description ── */
+.hero-desc {
+  color: var(--slate-gray);
+  font-size: 1.05rem;
+  max-width: 460px;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* ── CTA Button ── */
+.btn-collection {
+  background: var(--accent-clay);
+  color: white;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 10px 20px var(--soft-glow);
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.btn-collection:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(192, 127, 94, 0.25);
+}
+
+/* ── Trust Bar ── */
+.trust-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 1.5rem;
+}
+
+.trust-avatars {
+  display: flex;
+}
+
+.avatar-pill {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background: #F1F5F9;
+  margin-right: -10px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.trust-text {
+  font-size: 0.8rem;
+  color: #1E293B;
+  font-weight: 600;
+  margin-left: 14px;
+}
+
+.trust-text span {
+  font-weight: 800;
+  color: var(--accent-clay);
+}
+
+/* ── Right Side Visuals ── */
+.hero-visuals {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+/* Remove all pseudo-element orbs */
+.hero-visuals::before,
+.hero-visuals::after {
+  display: none;
+}
+
+/* ── Glow only via drop-shadow on the image itself ── */
+.main-model {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.08));
+}
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .hero-section {
+    padding: 60px 0;
+    min-height: unset;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-desc {
+    margin: 1.2rem auto 2rem;
+  }
+
+  .hero-visuals {
+    margin-top: 0.25rem;
+  }
+
+  .hero-tag {
+    margin: 0 auto 1.2rem;
+  }
+
+  .trust-bar {
+    justify-content: center;
+  }
+
+  .trust-text {
+    margin-left: -15px;
+  }
+}

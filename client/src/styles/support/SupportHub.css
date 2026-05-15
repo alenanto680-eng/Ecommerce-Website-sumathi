@@ -1,0 +1,763 @@
+/* =========================================================
+   SUPPORT HUB PAGE
+========================================================= */
+
+.sh-page {
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 0 20px 40px;
+  font-family: 'Inter', sans-serif;
+  color: #212121;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.sh-container {
+  display: flex;
+  width: 100%;
+  max-width: 1100px;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+/* ── MAIN ── */
+.sh-main {
+  flex-grow: 1;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── HERO ── */
+.sh-hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  padding: 40px 32px 36px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+}
+
+.sh-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.06) 1px, transparent 0);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+
+.sh-hero-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 8px;
+  position: relative;
+}
+
+.sh-hero-sub {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0 0 22px;
+  position: relative;
+}
+
+.sh-search-wrap {
+  display: flex;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.sh-search-icon {
+  padding: 0 10px 0 14px;
+  font-size: 13px;
+  color: #aaa;
+  flex-shrink: 0;
+}
+
+.sh-search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 11px 8px;
+  font-size: 13px;
+  font-family: 'Inter', sans-serif;
+  color: #212121;
+  background: transparent;
+}
+
+.sh-search-input::placeholder {
+  color: #bbb;
+}
+
+.sh-search-btn {
+  background: #2D3E50;
+  color: #fff;
+  border: none;
+  padding: 11px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.sh-search-btn:hover {
+  background: #1a5fc0;
+}
+
+/* ── BODY ── */
+.sh-body {
+  padding: 28px 32px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  flex: 1;
+  background: #fff;
+  border-radius: 0 0 12px 12px;
+}
+
+/* ── SECTION ── */
+.sh-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.sh-section-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #212121;
+  margin: 0 0 14px;
+}
+
+.sh-orders-scroll-container {
+  max-height: 400px;
+  /* HEIGHT FOR ABOUT 4 ORDERS */
+  overflow-y: auto;
+  padding-right: 8px;
+  /* SPACE FOR SCROLLBAR */
+  margin-bottom: 8px;
+}
+
+/* CUSTOM SCROLLBAR FOR ORDERS */
+.sh-orders-scroll-container::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sh-orders-scroll-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.sh-orders-scroll-container::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 10px;
+}
+
+.sh-orders-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #bbb;
+}
+
+/* ── CONNECT GRID ── */
+.sh-connect-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.sh-connect-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sh-connect-card:hover {
+  border-color: #2D3E50;
+  background: #f1f5f9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.sh-connect-icon {
+  width: 44px;
+  height: 44px;
+  background: #fff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
+}
+
+.sh-connect-info {
+  flex: 1;
+}
+
+.sh-connect-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #212121;
+  margin-bottom: 3px;
+}
+
+.sh-connect-sub {
+  font-size: 11px;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+  .sh-connect-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── ORDERS LIST ── */
+.sh-orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sh-order-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.07);
+  position: relative;
+}
+
+.sh-order-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  flex-shrink: 0;
+}
+
+.sh-order-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.sh-order-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: #aaa;
+  letter-spacing: 0.5px;
+  margin-bottom: 3px;
+}
+
+.sh-order-id {
+  font-size: 14px;
+  font-weight: 700;
+  color: #212121;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sh-order-status {
+  font-size: 12px;
+  color: #666;
+}
+
+.sh-status-delivered {
+  color: #22c55e;
+  font-weight: 600;
+}
+
+.sh-need-help-btn {
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 7px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #444;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.sh-need-help-btn:hover {
+  border-color: #2D3E50;
+  color: #2D3E50;
+}
+
+.sh-channel-icon svg {
+  color: #fff;
+}
+
+/* ── ORDER HELP PAGE ── */
+.sh-hero--compact {
+  padding: 32px 32px 28px;
+  text-align: center;
+}
+
+.sh-oh-breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 11px;
+  margin-bottom: 16px;
+}
+
+.sh-oh-order-strip-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.sh-oh-order-strip {
+  background: #f7f9ff;
+  border-radius: 12px;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid #e8eeff;
+  width: fit-content;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+}
+
+.sh-connect-box {
+  background: #fff;
+  border: 1px solid #f1f1f1;
+  border-radius: 16px;
+  padding: 32px 24px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+  text-align: center;
+}
+
+.sh-still-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 24px; /* Gap between title and cards */
+}
+
+/* ── SUPPORT ISSUE FORM ── */
+.sh-issue-form {
+  background: #fcfcfc;
+  border: 1.5px dashed #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.sh-form-hint {
+  font-size: 11px;
+  color: #888;
+  margin-bottom: 12px;
+}
+
+.sh-issue-desc {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 13px;
+  font-family: inherit;
+  resize: vertical;
+  outline: none;
+  background: #fff;
+}
+
+.sh-issue-desc:focus {
+  border-color: #2D3E50;
+}
+
+.sh-file-upload {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.sh-file-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #eee;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #444;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.sh-file-label:hover {
+  background: #e0e0e0;
+}
+
+/* ── ADMIN SUPPORT STYLES ── */
+.admin-attachment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.admin-attachment-item {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #eee;
+  background: #000;
+  aspect-ratio: 16/9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-prev-media {
+  max-width: 100%;
+  max-height: 100%;
+  cursor: pointer;
+}
+
+.description-box {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #333;
+  border-left: 4px solid #2D3E50;
+}
+
+.sh-channels {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 0 auto;
+}
+
+.sh-channel-card {
+  background: #f7f9ff;
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+  border: 1px solid transparent;
+  width: 240px;
+}
+
+.sh-channel-card:hover {
+  background: #fff;
+  border-color: #e8eeff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transform: translateY(-2px);
+}
+
+.sh-channel-icon {
+  width: 44px;
+  height: 44px;
+  background: #ffffff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+.sh-channel-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 8px;
+}
+
+.sh-channel-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 4px;
+}
+
+.sh-channel-sub {
+  font-size: 11px;
+  color: #888;
+  line-height: 1.4;
+}
+
+.sh-channels--two {
+  display: flex;
+  /* Override grid if it was there */
+}
+
+.sh-channel-sub {
+  white-space: normal;
+}
+
+
+/* OrderHelp — stretch */
+.sh-body--stretch {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.sh-still-section--stretch {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* =============================================
+   MOBILE OVERRIDES (≤768px)
+   Keep this at the bottom to ensure correct specificity
+   ============================================= */
+@media (max-width: 768px) {
+  .sh-page .sidebar {
+    display: none !important;
+  }
+
+  .sh-page {
+    padding: 0;
+    min-height: auto;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  .sh-container {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .sh-main {
+    width: 94%;
+    margin: 16px auto;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    padding: 20px 0 0;
+  }
+
+  .sh-mobile-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    justify-content: center;
+    /* keep title centered if desired, but user said left side.
+    actually, I'll align items left for a cleaner look if button is involved.
+    Wait, the screenshot title was left aligned.
+    */
+    text-align: left;
+    justify-content: flex-start;
+  }
+
+  .mobile-back-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2D3E50;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .sh-hero .mobile-back-btn {
+    display: none;
+  }
+
+  .sh-hero-title {
+    font-size: 1.25rem;
+    margin: 0 !important;
+    text-align: left;
+  }
+
+  .mobile-back-btn span.back-chevron {
+    font-size: 20px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sh-hero {
+    padding: 24px 20px;
+    text-align: left;
+    /* Align hero content left for mobile navigation */
+  }
+
+  .sh-hero-sub {
+    margin-left: 0;
+    text-align: left;
+  }
+
+  .sh-body {
+    padding: 20px 16px;
+  }
+
+  .sh-order-card {
+    padding: 16px;
+    gap: 16px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* Allow button to wrap below */
+    align-items: center;
+    text-align: left;
+  }
+
+  .sh-order-img {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+  }
+
+  .sh-order-info {
+    flex: 1;
+    /* Take up remaining space next to img */
+    min-width: 150px;
+  }
+
+  .sh-order-id {
+    font-size: 11px;
+    margin-bottom: 2px;
+  }
+
+  .sh-need-help-btn {
+    width: 100%;
+    /* Forces it to next line due to wrap */
+    text-align: center;
+    margin-top: 4px;
+  }
+
+  /* ❗ STACK CHANNELS VERTICALLY ON MOBILE ❗ */
+  .sh-channels {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .sh-channel-card {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .sh-still-title {
+    text-align: center;
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+
+  .sh-channel-sub {
+    white-space: normal;
+  }
+
+  .sh-oh-order-strip {
+    padding: 12px;
+    gap: 12px;
+  }
+}
+
+/* ── MULTI ITEM ORDER CARD ── */
+.sh-order-card--multi {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  padding: 0;
+}
+
+.sh-order-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: #f8fafc;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.sh-order-body-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+}
+
+.sh-order-items-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sh-order-actions-side {
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sh-order-item-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sh-order-item-meta {
+  font-size: 11px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.sh-need-help-btn-wide {
+  width: 100%;
+  background: #2D3E50;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.sh-need-help-btn-wide:hover {
+  background: #1e2a38;
+  transform: translateY(-1px);
+}

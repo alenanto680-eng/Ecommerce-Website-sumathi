@@ -1,0 +1,161 @@
+/* ── Review QR Page ── */
+.qrp-page {
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.qrp-header {
+  width: 100%;
+  text-align: center;
+}
+
+.qrp-back {
+  background: none;
+  border: none;
+  color: #2D3E50;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 0.75rem;
+  font-family: 'Inter', sans-serif;
+  display: block;
+  outline: none;
+}
+.qrp-back:hover { opacity: 0.75; }
+
+.qrp-title {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #1e2139;
+  margin-bottom: 0.3rem;
+}
+
+.qrp-sub {
+  font-size: 0.84rem;
+  color: #6b7280;
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ── QR Card (printable area) ── */
+.qrp-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2.5rem 3rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 360px;
+  width: 100%;
+}
+
+.qrp-brand {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #2D3E50;
+  letter-spacing: 0.5px;
+}
+
+.qrp-scan-text {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.qrp-qr-wrap {
+  padding: 12px;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.qrp-url {
+  font-size: 0.72rem;
+  color: #9ca3af;
+  word-break: break-all;
+  text-align: center;
+  margin: 0;
+}
+
+.qrp-tagline {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #C17B5C;
+  margin: 0;
+}
+
+.qrp-static-qr {
+  width: 240px;
+  height: 240px;
+  display: block;
+  object-fit: contain;
+}
+
+/* ── Action buttons ── */
+.qrp-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.qrp-btn {
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem 2rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: opacity 0.2s;
+  outline: none;
+}
+.qrp-btn:hover { opacity: 0.85; }
+
+.qrp-download { background: #2D3E50; color: #fff; }
+.qrp-print    { background: #2D3E50; color: #fff; }
+
+.qrp-img-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: opacity 0.2s;
+  outline: none;
+}
+.qrp-img-btn:hover { opacity: 0.7; }
+.qrp-img-btn img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  display: block;
+}
+
+/* ── Print styles ── */
+@page { margin: 0; size: auto; }
+
+@media print {
+  * { visibility: hidden !important; }
+  #qrp-print-area, #qrp-print-area * { visibility: visible !important; }
+  #qrp-print-area {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    box-shadow: none !important;
+    border: 2px solid #e5e7eb !important;
+    margin: 0 !important;
+    z-index: 9999 !important;
+  }
+  .no-print { display: none !important; }
+}

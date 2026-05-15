@@ -1,0 +1,156 @@
+.age-section {
+  width: 100%;
+  padding: 0 0 4rem;
+  margin-top: -50px;
+}
+
+/* ── Align content to navbar logo/cart edges ── */
+.age-section .section-inner {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Breadcrumb */
+.page-breadcrumb {
+  display: flex;
+  align-items: center;
+  padding-bottom: 0.75rem;
+  font-size: 0.82rem;
+}
+
+.breadcrumb-link {
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumb-link:hover {
+  color: var(--accent-clay, #c07a55);
+}
+
+.breadcrumb-sep {
+  color: #9ca3af;
+  margin: 0 4px;
+}
+
+.breadcrumb-current {
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+/* Grid — 3 columns, 2 rows */
+.age-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+/* Card */
+.age-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 4 / 3;
+  background: #e4e2e2;
+}
+
+/* Full-cover photo */
+.age-card-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.age-card:hover .age-card-img {
+  transform: scale(1.04);
+}
+
+/* Dark gradient overlay at bottom */
+.age-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.15) 45%,
+      transparent 100%);
+  border-radius: 20px;
+}
+
+/* Text on top of overlay */
+.age-card-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 1rem 1.25rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  z-index: 2;
+}
+
+.age-card-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.age-card-range {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.1;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 1100px) {
+  .age-section {
+    margin-top: 0;
+    padding-top: 0.5rem;
+  }
+
+  .age-section .page-breadcrumb {
+    padding-top: 0.5rem;
+  }
+
+  .age-section .section-inner {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .age-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .age-section {
+    padding-bottom: 3rem;
+  }
+
+  .age-section .section-inner {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .age-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .age-card {
+    aspect-ratio: 16 / 9;
+  }
+}

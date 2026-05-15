@@ -1,0 +1,121 @@
+.sidebar {
+  width: 280px;
+  min-width: 280px;
+  background: #ffffff;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  flex-shrink: 0;
+  padding-bottom: 20px;
+}
+
+.profile-header {
+  padding: 28px 16px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  border-bottom: 1px solid #f1f3f6;
+}
+
+.avatar-container {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+  margin-bottom: 4px;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e2e8f0;
+}
+
+.status-dot {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 12px;
+  height: 12px;
+  background: #4caf50;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+.welcome-text {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #878787;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.user-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #212121;
+  text-align: center;
+}
+
+.nav-section {
+  padding: 12px 0;
+  border-bottom: 1px solid #f1f3f6;
+}
+
+.nav-section-last {
+  border-bottom: none;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: background 0.2s;
+  color: #212121;
+  font-size: 14px;
+  font-weight: 500;
+  gap: 15px;
+  user-select: none;
+}
+
+.nav-item:hover { background-color: #eef2f7; }
+
+.nav-item.active {
+  background-color: transparent; /* Removed blue background highlight */
+  color: #212121;
+  font-weight: 600; /* Added weight to indicate active state clearly instead of bg color */
+}
+
+.nav-arrow {
+  margin-left: auto;
+  color: #ccc;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.nav-sub-item {
+  padding: 8px 20px 8px 53px;
+  font-size: 13px;
+  color: #878787;
+  cursor: pointer;
+  transition: color 0.15s;
+  user-select: none;
+}
+
+.nav-sub-item:hover { color: #2C3E50; }
+.nav-sub-item.sub-active { color: #2C3E50; font-weight: 500; }
+
+.sidebar-spacer { flex: 1; }
+
+.nav-icon-img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  flex-shrink: 0;
+}

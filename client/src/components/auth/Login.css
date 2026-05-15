@@ -1,0 +1,396 @@
+/* ============================================================
+   Login.css — prefixed "ul-" to avoid global conflicts
+   ============================================================ */
+
+.ul-page {
+  position: fixed;
+  inset: 0;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  min-height: 100vh;
+  min-height: 100dvh; /* Dynamic viewport height */
+  overflow-y: auto;
+  z-index: 9999;
+}
+
+/* ── Card ── */
+.ul-container {
+  width: 100%;
+  max-width: 900px;
+  background: #ffffff;
+  display: flex;
+  position: relative;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.12);
+  border-radius: 20px;
+  min-height: 580px;
+  overflow: hidden;
+}
+
+/* ── Left: Image ── */
+.ul-image-section {
+  flex: 1.4;
+  background-color: #ffffff;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  z-index: 20;
+  /* NO transition/animation */
+}
+
+.ul-image-section img {
+  width: 110%;
+  height: 110%;
+  object-fit: contain;
+  object-position: center;
+  transform: scale(1.05);
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.05));
+}
+
+/* ── Back Button ── */
+.ul-back-btn {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.ul-back-btn:hover {
+  color: #1e293b;
+  transform: translateX(-3px);
+}
+
+/* ── Right: Form ── */
+.ul-form-section {
+  flex: 1;
+  padding: 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  background: white;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  z-index: 5;
+  /* NO transition/animation */
+}
+
+/* ── Header ── */
+.ul-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.ul-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 8px;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.ul-header p {
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* ── Form fields ── */
+.ul-form-group {
+  margin-bottom: 20px;
+}
+
+.ul-form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 8px;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.ul-form-group input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 15px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+  background: #fff;
+  color: #1e293b;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  box-sizing: border-box;
+}
+
+.ul-form-group input:focus {
+  border-color: #2D3E50;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* ── Phone wrapper: prefix INSIDE the input row ── */
+.ul-phone-wrap {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ul-phone-wrap:focus-within {
+  border-color: #2D3E50;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.ul-phone-prefix {
+  padding: 14px 12px 14px 16px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e293b;
+  background: #f8fafc;
+  border-right: 1px solid #e2e8f0;
+  white-space: nowrap;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  user-select: none;
+}
+
+.ul-phone-wrap input {
+  flex: 1;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 14px 16px;
+  outline: none;
+  font-size: 15px;
+  color: #1e293b;
+  background: transparent;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  box-sizing: border-box;
+}
+
+/* ── Divider ── */
+.ul-divider {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  color: #64748b;
+  font-size: 13px;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.ul-divider::before,
+.ul-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.ul-divider::before { margin-right: 12px; }
+.ul-divider::after  { margin-left:  12px; }
+
+/* ── Google button ── */
+.ul-btn-google {
+  width: 100%;
+  padding: 12px;
+  background-color: white;
+  color: #1e293b;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.ul-btn-google:hover {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.ul-btn-google:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ── Messages ── */
+.ul-message {
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  text-align: center;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.ul-msg-success {
+  background-color: #dcfce7;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.ul-msg-error {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+/* ── Success Overlay ── */
+.ul-success-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  z-index: 100;
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.ul-success-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ul-success-icon {
+  background: #dcfce7;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.ul-success-overlay h2 {
+  color: #1e293b;
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: 700;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.ul-success-overlay p {
+  color: #64748b;
+  font-size: 16px;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.ul-success-overlay p span {
+  color: #2D3E50;
+  font-weight: 700;
+}
+
+/* ── Primary button ── */
+.ul-btn-signin {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #2D3E50, #2D3E50);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ul-btn-signin:hover {
+  background: linear-gradient(135deg, #2D3E50, #1d4ed8);
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.25);
+}
+
+.ul-btn-signin:active {
+  transform: scale(0.98);
+  box-shadow: none;
+}
+
+.ul-btn-signin:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── Resend button ── */
+.ul-btn-resend {
+  margin-top: 14px;
+  background: none;
+  border: none;
+  color: #2D3E50;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.ul-btn-resend:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+/* ── Responsive ── */
+@media (max-width: 850px) {
+  .ul-container {
+    flex-direction: column;
+    max-width: 450px;
+    min-height: auto;
+  }
+
+  .ul-image-section {
+    height: 220px;
+    flex: none;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .ul-image-section img {
+    width: 85%;
+    height: 85%;
+    transform: scale(1);
+  }
+
+  .ul-form-section {
+    padding: 32px;
+    flex: none;
+    width: 100%;
+    border-radius: 0 0 20px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ul-image-section { display: none; }
+  .ul-form-section  { padding: 24px; }
+}

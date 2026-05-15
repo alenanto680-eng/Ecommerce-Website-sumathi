@@ -1,0 +1,174 @@
+/* ── Policy Modal Overlay ── */
+.policy-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: overlayFadeIn 0.2s ease;
+}
+
+@keyframes overlayFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Modal Box ── */
+.policy-modal {
+  background: #ffffff;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 720px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+  animation: modalSlideUp 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+@keyframes modalSlideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Modal Header ── */
+.policy-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 28px 20px;
+  border-bottom: 1px solid #e8e8e8;
+  background: #2C3E50;
+  flex-shrink: 0;
+}
+
+.policy-modal-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+.policy-close-btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.policy-close-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+/* ── Scrollable Body ── */
+.policy-modal-body {
+  overflow-y: auto;
+  padding: 28px 28px 32px;
+  flex: 1;
+  scroll-behavior: smooth;
+}
+
+.policy-modal-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+.policy-modal-body::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 10px;
+}
+
+.policy-modal-body::-webkit-scrollbar-thumb {
+  background: #C17B5C;
+  border-radius: 10px;
+}
+
+/* ── Policy Content ── */
+.policy-body {
+  color: #333333;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.policy-intro {
+  font-size: 14.5px;
+  color: #555;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.policy-body section {
+  margin-bottom: 22px;
+}
+
+.policy-body h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2C3E50;
+  margin-bottom: 8px;
+  padding-left: 12px;
+  border-left: 3px solid #C17B5C;
+}
+
+.policy-body p {
+  margin: 0 0 8px;
+  color: #444;
+}
+
+.policy-body ul {
+  margin: 6px 0 8px 20px;
+  padding: 0;
+  color: #555;
+}
+
+.policy-body ul li {
+  margin-bottom: 5px;
+}
+
+.policy-body a {
+  color: #C17B5C;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.policy-body a:hover {
+  text-decoration: underline;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .policy-modal {
+    max-height: 92vh;
+    border-radius: 8px;
+  }
+
+  .policy-modal-header {
+    padding: 18px 20px 16px;
+  }
+
+  .policy-modal-header h2 {
+    font-size: 1.1rem;
+  }
+
+  .policy-modal-body {
+    padding: 20px 18px 24px;
+  }
+}

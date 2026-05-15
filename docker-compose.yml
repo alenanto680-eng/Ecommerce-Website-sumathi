@@ -1,0 +1,20 @@
+services:
+  backend:
+    build: ./server
+    container_name: clothing_backend
+    restart: always
+    env_file: .env
+    ports:
+      - "127.0.0.1:5000:5000"
+
+  frontend:
+    build: ./client
+    container_name: clothing_frontend
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+    depends_on:
+      - backend
